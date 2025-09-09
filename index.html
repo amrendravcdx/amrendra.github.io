@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amrendra Yadav - Cybersecurity Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-bg: #1b1b1e;
+            --color-bg-variant: #79717a;
+            --color-primary: #a68f97;
+            --color-primary-variant: rgba(166, 143, 151, 0.4);
+            --color-white: #fff;
+            --color-light: hsla(0, 0%, 100%, 0.6);
+            --transition: all 400ms ease;
+            --container-width-lg: 75%;
+            --container-width-md: 86%;
+            --container-width-sm: 90%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-white);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: var(--container-width-lg);
+            margin: 0 auto;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        section > h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--color-white);
+        }
+
+        .btn {
+            width: max-content;
+            display: inline-block;
+            color: var(--color-primary);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid var(--color-primary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+            border-color: transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Header */
+        header {
+            height: 100vh;
+            padding-top: 2rem;
+            overflow: hidden;
+        }
+
+        .header__container {
+            text-align: center;
+            height: 100%;
+            position: relative;
+        }
+
+        /* CTA */
+        .cta {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        /* Header Socials */
+        .header__socials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            position: absolute;
+            left: 0;
+            bottom: 3rem;
+        }
+
+        .header__socials::after {
+            content: '';
+            width: 1px;
+            height: 2rem;
+            background-color: var(--color-primary);
+        }
+
+        /* Profile Image */
+        .profile {
+            background: linear-gradient(var(--color-primary), transparent);
+            width: 22rem;
+            height: 30rem;
+            position: absolute;
+            left: calc(50% - 11rem);
+            margin-top: 4rem;
+            border-radius: 12rem 12rem 0 0;
+            overflow: hidden;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        /* Scroll Down */
+        .scroll__down {
+            position: absolute;
+            right: -2.3rem;
+            bottom: 5rem;
+            transform: rotate(90deg);
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about__container {
+            display: grid;
+            grid-template-columns: 35% 50%;
+            gap: 15%;
+        }
+
+        .about__me {
+            width: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 2rem;
+            background: linear-gradient(45deg, transparent, var(--color-primary), transparent);
+            display: grid;
+            place-items: center;
+        }
+
+        .about__me-image {
+            border-radius: 2rem;
+            overflow: hidden;
+            transform: rotate(10deg);
+            transition: var(--transition);
+        }
+
+        .about__me-image:hover {
+            transform: rotate(0);
+        }
+
+        .about__content p {
+            margin: 2rem 0 2.6rem;
+            color: var(--color-light);
+        }
+
+        /* Experience Section */
+        .experience__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .experience__container > div {
+            background-color: var(--color-bg-variant);
+            padding: 2.4rem 5rem;
+            border-radius: 2rem;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .experience__container > div:hover {
+            background-color: transparent;
+            border-color: var(--color-primary-variant);
+            cursor: default;
+        }
+
+        .experience__container > div h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--color-primary);
+        }
+
+        .experience__content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 2rem;
+        }
+
+        .experience__details {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .experience__details-icon {
+            margin-top: 6px;
+            color: var(--color-primary);
+        }
+
+        /* Projects Section */
+        .projects__container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .project__item {
+            background-color: var(--color-bg-variant);
+            padding: 1.3rem;
+            border-radius: 2rem;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .project__item:hover {
+            border-color: var(--color-primary-variant);
+            background-color: transparent;
+        }
+
+        .project__item-image {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            height: 200px;
+            background-color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .project__item h3 {
+            margin: 1.2rem 0 1rem;
+        }
+
+        .project__item p {
+            color: var(--color-light);
+            margin-bottom: 1rem;
+        }
+
+        .project__item-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact__container {
+            width: 58%;
+            display: grid;
+            grid-template-columns: 30% 58%;
+            gap: 12%;
+        }
+
+        .contact__options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact__option {
+            background-color: var(--color-bg-variant);
+            padding: 1.2rem;
+            border-radius: 1.2rem;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .contact__option:hover {
+            background-color: transparent;
+            border-color: var(--color-primary-variant);
+        }
+
+        .contact__option-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact__option a {
+            margin-top: 0.7rem;
+            display: inline-block;
+            font-size: 0.8rem;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            background-color: transparent;
+            border: 2px solid var(--color-primary-variant);
+            resize: none;
+            color: var(--color-white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-bg-variant);
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 7rem;
+        }
+
+        .footer__socials {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer__socials a {
+            background-color: var(--color-bg);
+            color: var(--color-white);
+            padding: 0.8rem;
+            border-radius: 0.7rem;
+            display: flex;
+            border: 1px solid transparent;
+        }
+
+        .footer__socials a:hover {
+            background-color: transparent;
+            color: var(--color-bg);
+            border-color: var(--color-bg);
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: var(--container-width-md);
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .about__container {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .about__me {
+                width: 50%;
+                margin: 2rem auto 4rem;
+            }
+            
+            .experience__container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience__container > div {
+                width: 80%;
+                padding: 2rem;
+                margin: 0 auto;
+            }
+            
+            .projects__container {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.2rem;
+            }
+            
+            .contact__container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: var(--container-width-sm);
+            }
+            
+            section > h2 {
+                margin-bottom: 2rem;
+            }
+            
+            .header__socials, .scroll__down {
+                display: none;
+            }
+            
+            .about__me {
+                width: 65%;
+                margin: 0 auto 3rem;
+            }
+            
+            .experience__container {
+                gap: 1rem;
+            }
+            
+            .experience__container > div {
+                width: 100%;
+                padding: 2rem 1rem;
+            }
+            
+            .projects__container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact__container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header__container">
+            <h5>Hello, I'm</h5>
+            <h1>Amrendra Yadav</h1>
+            <h5 class="text-light">Cyber Security & Cloud Security Manager</h5>
+            <div class="cta">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#projects" class="btn btn-primary">My Projects</a>
+            </div>
+            
+            <div class="header__socials">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <div class="profile">
+                <div style="background-color: #a68f97; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 5rem;">
+                    AY
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll__down">Scroll Down</a>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="container about__container">
+            <div class="about__me">
+                <div class="about__me-image">
+                    <div style="background-color: #a68f97; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        AY
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about__content">
+                <p>
+                    Over 13 years in cybersecurity and IT security, specializing in designing and managing advanced cybersecurity and cloud security solutions across enterprises. Expertise in security architecture, risk management, incident response, threat intelligence, and compliance with ISO 27001, GDPR, HIPAA, and NIST.
+                </p>
+                <p>
+                    Skilled in securing networks and cloud environments (AWS, Azure, GCP) using tools like Splunk, IBM QRadar, and ArcSight for monitoring and incident response. Proficient in developing incident response playbooks and threat intelligence strategies.
+                </p>
+                <a href="#contact" class="btn">Let's Talk</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>My Expertise</h2>
+        <div class="container experience__container">
+            <div class="experience__frontend">
+                <h3>Cybersecurity</h3>
+                <div class="experience__content">
+                    <article class="experience__details">
+                        <i class="fas fa-shield-alt experience__details-icon"></i>
+                        <div>
+                            <h4>SIEM</h4>
+                            <small>Splunk, IBM QRadar, ArcSight</small>
+                        </div>
+                    </article>
+                    <article class="experience__details">
+                        <i class="fas fa-fire experience__details-icon"></i>
+                        <div>
+                            <h4>Firewalls</h4>
+                            <small>Palo Alto, Fortinet</small>
+                        </div>
+                    </article>
+                    <article class="experience__details">
+                        <i class="fas fa-bug experience__details-icon"></i>
+                        <div>
+                            <h4>Vulnerability Management</h4>
+                            <small>Nessus, Qualys, Rapid7</small>
+                        </div>
+                    </article>
+                    <article class="experience__details">
+                        <i class="fas fa-desktop experience__details-icon"></i>
+                        <div>
+                            <h4>Endpoint Protection</h4>
+                            <small>CrowdStrike, SentinelOne</small>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            
+            <div class="experience__backend">
+                <h3>Cloud Security</h3>
+                <div class="experience__content">
+                    <article class="experience__details">
+                        <i class="fab fa-aws experience__details-icon"></i>
+                        <div>
+                            <h4>AWS</h4>
+                            <small>Architecture & Security</small>
+                        </div>
+                    </article>
+                    <article class="experience__details">
+                        <i class="fab fa-microsoft experience__details-icon"></i>
+                        <div>
+                            <h4>Azure</h4>
+                            <small>Security Implementation</small>
+                        </div>
+                    </article>
+                    <article class="experience__details">
+                        <i class="fab fa-google experience__details-icon"></i>
+                        <div>
+                            <h4>Google Cloud</h4>
+                            <small>GCP Security</small>
+                        </div>
+                    </article>
+                    <article class="experience__details">
+                        <i class="fas fa-key experience__details-icon"></i>
+                        <div>
+                            <h4>IAM</h4>
+                            <small>Identity & Access Management</small>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Recent Projects</h2>
+        <div class="container projects__container">
+            <article class="project__item">
+                <div class="project__item-image">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Enterprise Security Framework</h3>
+                <p>Led the design and rollout of a comprehensive security framework aligned with ISO 27001 and NIST standards.</p>
+                <div class="project__item-cta">
+                    <a href="#" class="btn">Details</a>
+                </div>
+            </article>
+            
+            <article class="project__item">
+                <div class="project__item-image">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud Security Strategy</h3>
+                <p>Developed and executed a cloud security strategy for AWS, Azure, and GCP environments.</p>
+                <div class="project__item-cta">
+                    <a href="#" class="btn">Details</a>
+                </div>
+            </article>
+            
+            <article class="project__item">
+                <div class="project__item-image">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Zero Trust Architecture</h3>
+                <p>Implemented Zero Trust security models including micro-segmentation and strict identity management.</p>
+                <div class="project__item-cta">
+                    <a href="#" class="btn">Details</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="container contact__container">
+            <div class="contact__options">
+                <article class="contact__option">
+                    <i class="fas fa-envelope contact__option-icon"></i>
+                    <h4>Email</h4>
+                    <h5>amrendra.yadav@example.com</h5>
+                    <a href="mailto:amrendra.yadav@example.com">Send a message</a>
+                </article>
+                
+                <article class="contact__option">
+                    <i class="fab fa-linkedin contact__option-icon"></i>
+                    <h4>LinkedIn</h4>
+                    <h5>Amrendra Yadav</h5>
+                    <a href="#">Connect with me</a>
+                </article>
+                
+                <article class="contact__option">
+                    <i class="fas fa-map-marker-alt contact__option-icon"></i>
+                    <h4>Location</h4>
+                    <h5>Bengaluru, India</h5>
+                </article>
+            </div>
+            
+            <form action="">
+                <input type="text" name="name" placeholder="Your Full Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer__socials">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2023 Amrendra Yadav. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
